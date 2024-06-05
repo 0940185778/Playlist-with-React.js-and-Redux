@@ -1,4 +1,5 @@
 // src/App.js
+import './App.css';
 import React from 'react';
 import SongList from './components/SongList';
 import { AppContainer, Title } from './styles/styledComponents';
@@ -6,9 +7,8 @@ import { AppContainer, Title } from './styles/styledComponents';
 const App = () => {
   return (
     <AppContainer>
-      <div><Title>Songs</Title></div>
-      
-      <div><SongList /></div>
+      <div className='song'><Title>Songs</Title></div>
+      <SongList />
     </AppContainer>
   );
 };

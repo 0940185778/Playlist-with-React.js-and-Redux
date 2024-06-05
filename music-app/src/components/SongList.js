@@ -29,7 +29,11 @@ const SongList = () => {
   if (error) return <div>Error: {error}</div>;
 
   return (
+    
     <SongListContainer>
+       <SongListItem>
+      <SongForm onSubmit={song => dispatch(addSongRequest(song))} />
+    </SongListItem >
     {songs.map(song => (
       <SongListItem key={song.id}>
         {editing === song.id ? (
@@ -43,9 +47,6 @@ const SongList = () => {
         )}
       </SongListItem>
     ))}
-    <SongListItem>
-      <SongForm onSubmit={song => dispatch(addSongRequest(song))} />
-    </SongListItem>
   </SongListContainer>
   );
 };
